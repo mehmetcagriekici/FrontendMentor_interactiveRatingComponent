@@ -1,0 +1,407 @@
+/*import the font family*/
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*APP styling variables*/
+:root {
+  /*colors from the design system*/
+
+  /*white*/
+  --color-white: #ffffff;
+
+  /*black*/
+  --color-black: #000000;
+
+  /*grey*/
+  --color-grey-950: #131518;
+  --color-grey-900: #262e38;
+  --color-grey-500: #969fad;
+
+  /*orange*/
+  --color-orange-500: #fc7614;
+
+  /*app gradient*/
+  --gradient-1: linear-gradient(to bottom, #232a34, #181e27);
+
+  /*typography presets/values from the design system*/
+  /*this application has only one font family*/
+  --font-family: "Overpass", sans-serif;
+
+  /*font weights used in the text presets*/
+  --font-weight-bold: 900;
+  --font-weight-semibold: 700;
+
+  /*text preset 1 - Overpass Bold*/
+  --text-preset-1-font-size: 28px;
+  --text-preset-1-line-height: 35px;
+
+  /*text preset 2 - Overpass Bold*/
+  --text-preset-2-font-size: 24px;
+  --text-preset-2-line-height: 30px;
+
+  /*text preset 3 - Overpass Bold*/
+  --text-preset-3-font-size: 16px;
+  --text-preset-3-line-height: 24px;
+  --text-preset-3-letter-spacing: 0.2px;
+
+  /*text preset 4 bold/regular - Overpass Bold/Regular*/
+  --text-preset-4-font-size: 15px;
+  --text-preset-4-bold-line-height: 19px;
+  --text-preset-4-bold-letter-spacing: 2px;
+  --text-preset-4-regular-line-height: 24px;
+
+  /*text preset 5 bold/semibold/regular - Overpass Bold/SemiBold/Regular*/
+  --text-preset-5-font-size: 14px;
+  --text-preset-5-bold-line-height: 18px;
+  --text-preset-5-bold-letter-spacing: 1.87px;
+  --text-preset-5-semibold-line-height: 24px;
+  --text-preset-5-semibold-letter-spacing: 0.17px;
+  --text-preset-5-regular-line-height: 22px;
+
+  /*spacing from the design system*/
+  --spacing-0: 0px;
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-1300: 104px;
+  --spacing-1700: 136px;
+
+  /*element sizes from the design system, mobile first*/
+  --component-container-width: 327px;
+  --component-container-height: 360px;
+
+  --star-container-size: 40px;
+
+  --rating-button-size: 42px;
+
+  --submit-button-width: 279px;
+  --submit-button-height: 45px;
+
+  --thanks-image-width: 144px;
+  --thanks-image-height: 96px;
+
+  /*border radiuses*/
+  --primary-border-radius: 15px;
+}
+
+/*default styles*/
+html,
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: var(--spacing-0);
+  padding: var(--spacing-0);
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+
+  /*default font family for the entire app*/
+  font-family: var(--font-family);
+
+  /*1rem = 10px*/
+  font-size: 62.5%;
+
+  background-color: var(--color-grey-950);
+}
+
+input[type="radio"] {
+  /*hide radio inputs*/
+  width: 0;
+  height: 0;
+
+  opacity: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+img {
+  object-fit: contain;
+}
+
+main {
+  /*inherit the body size*/
+  width: 100%;
+  height: 100%;
+
+  /*center the card*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*element classes*/
+/*main containers*/
+.rating-container,
+.thanks-container {
+  /*size 327 x 360 on mobile*/
+  width: var(--component-container-width);
+  height: var(--component-container-height);
+
+  /*padding 24px on mobile -> rating-container*/
+  padding: var(--spacing-300);
+
+  background: var(--gradient-1);
+
+  border-radius: var(--primary-border-radius);
+
+  /*center the child with the flex-center utility class, either submission form or thanks screen*/
+}
+
+.thanks-container {
+  /*padding 32px on mobile */
+  padding: var(--spacing-400);
+}
+
+/*containers main contents*/
+.rating-form,
+.thanks-content {
+  /*display one column flex*/
+  display: flex;
+  flex-direction: column;
+  /*gap 24px on mobile*/
+  gap: var(--spacing-300);
+}
+
+.thanks-content {
+  /*align center*/
+  justify-content: center;
+  align-items: center;
+}
+
+.star-container {
+  /*width and height 40px on the mobile*/
+  width: var(--star-container-size);
+  height: var(--star-container-size);
+
+  /*circular*/
+  border-radius: 999px;
+
+  background-color: var(--color-grey-900);
+
+  /*center the icon with flex-center utility class*/
+}
+
+.rating-texts,
+.message-container {
+  /*one col flex*/
+  display: flex;
+  flex-direction: column;
+  /*gap 16px on mobile*/
+  gap: var(--spacing-200);
+}
+
+/*rating text header*/
+.rating-texts h3,
+/*thanks message header*/
+.message-container h3 {
+  /*text preset 2 bold - white*/
+  font-size: var(--text-preset-2-font-size);
+  line-height: var(--text-preset-2-line-height);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+/*rating text message*/
+.rating-texts p,
+/*rating label*/
+.rating-button label,
+/*thanks message*/
+.message-container p {
+  /*text preset 5 regular - grey-500*/
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-regular-line-height);
+  color: var(--color-grey-500);
+}
+
+.rating-button label:hover {
+  color: var(--color-grey-900);
+  background-color: var(--color-white);
+}
+
+/*thanks message texts are centered unlike rating form texts*/
+.message-container h3,
+.message-container p {
+  text-align: center;
+}
+
+.rating-buttons-container {
+  /*one row flex*/
+  display: flex;
+  /*16px gap on mobile*/
+  gap: var(--spacing-200);
+}
+
+.rating-button {
+  /*width and height are 42 pixels on mobile*/
+  width: var(--rating-button-size);
+  height: var(--rating-button-size);
+
+  display: flex;
+
+  /*round*/
+  border-radius: 999px;
+
+  background-color: var(--color-grey-900);
+}
+
+.rating-button label {
+  width: 100%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  cursor: pointer;
+}
+
+.submit-button-container {
+  /*width 279px and height 45px on mobile*/
+  width: var(--submit-button-width);
+  height: var(--submit-button-height);
+
+  border-radius: 999px;
+
+  display: flex;
+
+  background-color: var(--color-orange-500);
+}
+
+.submit-button-container button {
+  width: 100%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  /*text preset 5 - bold black*/
+  font-size: var(--text-preset-5-font-size);
+  letter-spacing: var(--text-preset-5-bold-letter-spacing);
+  line-height: var(--text-preset-5-bold-line-height);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+
+  cursor: pointer;
+}
+
+.submit-button-container button:hover {
+  color: var(--color-grey-950);
+  background-color: var(--color-white);
+}
+
+.thanks-illustration-container {
+  /*144 x 96 on mobile*/
+  width: var(--thanks-image-width);
+  height: var(--thanks-image-height);
+}
+
+.rating-result-container {
+  /*16px padding on mobile*/
+  padding: var(--spacing-100) var(--spacing-200);
+
+  background-color: var(--color-grey-900);
+
+  border-radius: 999px;
+}
+
+.rating-result-container p {
+  /*text preset 5 regular orange-500*/
+  font-size: var(--text-preset-5-font-size);
+  line-height: var(--text-preset-5-regular-line-height);
+  color: var(--color-orange-500);
+}
+
+/*media queries*/
+@media (min-width: 768px) {
+  :root {
+    /*increase the element size variables*/
+    --component-container-width: 412px;
+    --component-container-height: 416px;
+
+    --star-container-size: 48px;
+
+    --rating-button-size: 51px;
+
+    --submit-button-width: 351px;
+
+    /*increase the border radius*/
+    --primary-border-radius: 30px;
+
+    /*increase the thanks image size*/
+    --thanks-image-width: 162px;
+    --thanks-image-height: 108px;
+  }
+
+  .rating-container {
+    /*padding is 32 pixels on tablets and desktop*/
+    padding: var(--spacing-400);
+  }
+
+  .thanks-container {
+    /*padding is 40 pixels on tablets*/
+    padding: var(--spacing-400);
+  }
+
+  .rating-form {
+    /*gap 32px on tablets and desktops*/
+    gap: var(--spacing-400);
+  }
+
+  .rating-texts h3,
+  .message-container h3 {
+    /*update the text preset to text preset 1*/
+    font-size: var(--text-preset-1-font-size);
+    line-height: var(--text-preset-1-line-height);
+  }
+
+  .rating-texts p,
+  .rating-button label,
+  .rating-result-container p,
+  .message-container p {
+    /*update the text preset to text preset 4 regular*/
+    font-size: var(--text-preset-4-font-size);
+    line-height: var(--text-preset-4-regular-line-height);
+  }
+
+  .rating-buttons-container {
+    /*24px gap on tablets*/
+    gap: var(--spacing-300);
+  }
+
+  .submit-button-container button {
+    /*update to text preset 5 semi bold*/
+    letter-spacing: var(--text-preset-5-semibold-letter-spacing);
+    line-height: var(--text-preset-5-semibold-line-height);
+    font-weight: var(--font-weight-semibold);
+  }
+}
+
+/*utility clases*/
+.hidden {
+  display: none !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active-rating-button {
+  color: var(--color-grey-900);
+  background-color: var(--color-orange-500);
+}
+
+.active-submit-button {
+  color: var(--color-grey-950);
+  background-color: var(--color-white);
+}

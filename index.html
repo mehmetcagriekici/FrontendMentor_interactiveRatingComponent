@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+
+  <body>
+    <main>
+      <!--component container-->
+      <div id="rating-component" class="flex-center rating-container">
+        <!--rating form-->
+        <form class="rating-form" id="rating-form">
+          <!--star container-->
+          <div class="flex-center star-container">
+            <img src="./images/icon-star.svg" alt="star icon" />
+          </div>
+
+          <!--rating texts-->
+          <div class="rating-texts">
+            <!--form heading-->
+            <h3>How did we do?</h3>
+
+            <!--form message-->
+            <p>
+              Please let us know how we did with your support request. All
+              feedback is appreciated to help us improve our offering!
+            </p>
+
+            <!--rating buttons container-->
+            <ul class="rating-buttons-container">
+              <!--rating button, click on the label, invisible input-->
+              <li class="rating-button">
+                <label for="rating-1" class="flex-center">1</label>
+
+                <input type="radio" id="rating-1" name="rating-input-1" />
+              </li>
+
+              <li class="rating-button">
+                <label for="rating-2" class="flex-center">2</label>
+
+                <input type="radio" id="rating-2" name="rating-input-2" />
+              </li>
+
+              <li class="rating-button">
+                <label for="rating-3" class="flex-center">3</label>
+
+                <input type="radio" id="rating-3" name="rating-input-3" />
+              </li>
+
+              <li class="rating-button">
+                <label for="rating-4" class="flex-center">4</label>
+
+                <input type="radio" id="rating-4" name="rating-input-4" />
+              </li>
+
+              <li class="rating-button">
+                <label for="rating-5" class="flex-center">5</label>
+
+                <input type="radio" id="rating-5" name="rating-input-5" />
+              </li>
+            </ul>
+          </div>
+
+          <!--submit button container-->
+          <div class="submit-button-container">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <!--thanks container-->
+      <div id="thanks-component" class="thanks-container hidden">
+        <div class="thanks-content">
+          <!--thank you illustration container-->
+          <div class="thanks-illustration-container">
+            <img
+              src="./images/illustration-thank-you.svg"
+              alt="thank you illustration"
+            />
+          </div>
+
+          <!--rating container-->
+          <div class="rating-result-container">
+            <p id="rating-result">You selected 4 out of 5</p>
+          </div>
+
+          <!--message container-->
+          <div class="message-container">
+            <h3>Thank you!</h3>
+
+            <p>
+              We appreciate you taking the time to give a rating. If you ever
+              need more support, don't hesitate to get in touch!
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
