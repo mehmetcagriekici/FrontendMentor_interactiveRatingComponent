@@ -203,7 +203,7 @@ main {
 }
 
 /*rating text header*/
-.rating-texts h3,
+.rating-texts h1,
 /*thanks message header*/
 .message-container h3 {
   /*text preset 2 bold - white*/
@@ -356,7 +356,7 @@ main {
     gap: var(--spacing-400);
   }
 
-  .rating-texts h3,
+  .rating-texts h1,
   .message-container h3 {
     /*update the text preset to text preset 1*/
     font-size: var(--text-preset-1-font-size);
